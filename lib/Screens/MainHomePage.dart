@@ -186,35 +186,44 @@ class _MainHomePageState extends State<MainHomePage> {
                   ],
                 ),
               ),
+// Container(
 
-    Column(
-      children: [
-        Padding(
+//   padding: const EdgeInsets.only(left: 25, right: 25),
+//   child: Wrap(
+//         spacing: 15, // Adjust the spacing between sets of containers
+//         children: [
+//           CustomContainerSet(
+//             imageAsset: "assets/images/AI.jpg",
+//             labelText: "Machine Learning",
+//           ),
+//           CustomContainerSet(
+//             imageAsset: "assets/images/AI.jpg",
+//             labelText: "HTML",
+//           ),
+//           CustomContainerSet(
+//             imageAsset: "assets/images/AI.jpg",
+//             labelText: "CSS",
+//           ),
+//            CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "Machine Learning",
+//       ),
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "HTML",
+//       ),
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "CSS",
+//       ),
+//         ],
+//   ),
+// ),
+Container(
   padding: const EdgeInsets.only(left: 25, right: 25),
   child: Wrap(
-        spacing: 15, // Adjust the spacing between sets of containers
-        children: [
-          CustomContainerSet(
-            imageAsset: "assets/images/AI.jpg",
-            labelText: "Machine Learning",
-          ),
-          CustomContainerSet(
-            imageAsset: "assets/images/AI.jpg",
-            labelText: "HTML",
-          ),
-          CustomContainerSet(
-            imageAsset: "assets/images/AI.jpg",
-            labelText: "CSS",
-          ),
-         
-        ],
-  ),
-),
-const SizedBox(height: 15,),
-Padding(
-  padding: const EdgeInsets.only(left: 25, right: 25),
-  child: Wrap(
-    spacing: 15, // Adjust the spacing between sets of containers
+    spacing: screenSize.width >= 500 ? 15 : 10, // Adjust spacing based on available width
+    runSpacing: screenSize.width >= 500 ? 15 : 10, // Adjust spacing based on available width
     children: [
       CustomContainerSet(
         imageAsset: "assets/images/AI.jpg",
@@ -228,13 +237,92 @@ Padding(
         imageAsset: "assets/images/AI.jpg",
         labelText: "CSS",
       ),
-     
+      CustomContainerSet(
+        imageAsset: "assets/images/AI.jpg",
+        labelText: "Machine Learning",
+      ),
+      CustomContainerSet(
+        imageAsset: "assets/images/AI.jpg",
+        labelText: "HTML",
+      ),
+      CustomContainerSet(
+        imageAsset: "assets/images/AI.jpg",
+        labelText: "CSS",
+      ),
     ],
   ),
-)
+),
+// const SizedBox(height: 15,),
+// Padding(
+//   padding: const EdgeInsets.only(left: 25, right: 25),
+//   child: Wrap(
+//     spacing: 15, // Adjust the spacing between sets of containers
+//     children: [
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "Machine Learning",
+//       ),
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "HTML",
+//       ),
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "CSS",
+//       ),
+     
+//     ],
+//   ) ,
+// )
+// ,
+//     Column(
+//       children: [
+//         Padding(
+//   padding: const EdgeInsets.only(left: 25, right: 25),
+//   child: Wrap(
+//         spacing: 15, // Adjust the spacing between sets of containers
+//         children: [
+//           CustomContainerSet(
+//             imageAsset: "assets/images/AI.jpg",
+//             labelText: "Machine Learning",
+//           ),
+//           CustomContainerSet(
+//             imageAsset: "assets/images/AI.jpg",
+//             labelText: "HTML",
+//           ),
+//           CustomContainerSet(
+//             imageAsset: "assets/images/AI.jpg",
+//             labelText: "CSS",
+//           ),
+         
+//         ],
+//   ),
+// ),
+// const SizedBox(height: 15,),
+// Padding(
+//   padding: const EdgeInsets.only(left: 25, right: 25),
+//   child: Wrap(
+//     spacing: 15, // Adjust the spacing between sets of containers
+//     children: [
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "Machine Learning",
+//       ),
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "HTML",
+//       ),
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "CSS",
+//       ),
+     
+//     ],
+//   ),
+// )
   
-      ],
-    ),
+//       ],
+//     ),
 
 Padding(
                 padding: EdgeInsets.all(25),
@@ -257,8 +345,7 @@ Padding(
                   ],
                 ),
               ),
-      
-     Padding(
+       Padding(
             padding: const EdgeInsets.only(left: 25, right: 25),
             child: Container(
               height: 230,
@@ -276,6 +363,7 @@ Padding(
               ),
             ),
           ),
+      // Add more containers as needed
             ],
 
        ),
@@ -284,12 +372,6 @@ Padding(
     );
   }
 }
-
-
-
-
-
-
 
 
 

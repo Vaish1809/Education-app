@@ -11,7 +11,7 @@ class CustomContainerSet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(17),
         color: Colors.white,
       ),
       padding: EdgeInsets.all(12),
@@ -22,7 +22,7 @@ class CustomContainerSet extends StatelessWidget {
             height: 26,
             width: 26,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(8),
               child: Image.asset(imageAsset, fit: BoxFit.cover),
             ),
           ),
