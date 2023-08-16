@@ -30,6 +30,7 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: screens[_index],
      
 bottomNavigationBar: Container(

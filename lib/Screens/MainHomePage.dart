@@ -3,6 +3,8 @@ import 'package:orinova_education_app/ColorClass.dart';
 import 'package:orinova_education_app/Screens/Profile.dart';
 import 'package:orinova_education_app/Screens/Wishlist.dart';
 import 'package:orinova_education_app/TextClass.dart';
+import 'package:orinova_education_app/Widgets/customCard.dart';
+import 'package:orinova_education_app/Widgets/popularCategory.dart';
 
 class MainHomePage extends StatefulWidget {
   const MainHomePage({super.key});
@@ -15,8 +17,9 @@ class _MainHomePageState extends State<MainHomePage> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-  
+
     return Scaffold(
+      backgroundColor: Color.fromARGB(80, 225, 230, 230),
       body: SafeArea(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -52,13 +55,15 @@ class _MainHomePageState extends State<MainHomePage> {
                               Text(
                                 "Good Morning",
                                 style: TextStyle(
-                                    fontSize: TextClass.customTextSizes['meduim'],
+                                    fontSize:
+                                        TextClass.customTextSizes['meduim'],
                                     color: Colors.white),
                               ),
                               Text(
                                 "Kaylie",
                                 style: TextStyle(
-                                    fontSize: TextClass.customTextSizes['large'],
+                                    fontSize:
+                                        TextClass.customTextSizes['large'],
                                     fontWeight: FontWeight.w700,
                                     color: Colors.white),
                               )
@@ -116,14 +121,240 @@ class _MainHomePageState extends State<MainHomePage> {
                   ),
                 ),
               ),
-            ],
+              Padding(
+                padding: EdgeInsets.all(25),
+                child: Row(
+                  children: [
+                    Text(
+                      "Popular Courses",
+                      style: TextStyle(
+                          fontSize: TextClass.customTextSizes["large"],
+                          fontWeight: FontWeight.w700),
+                    ),
+                    Spacer(),
+                    Text(
+                      "See more",
+                      style: TextStyle(
+                          color: ColorClass.customColors['BlueGreen'],
+                          fontSize: TextClass.customTextSizes["small"],
+                          fontWeight: FontWeight.w700),
+                    )
+                  ],
+                ),
+              ),
+         
+            
+
+      Padding(
+            padding: const EdgeInsets.only(left: 25, right: 25),
+            child: Container(
+              height: 230,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 10,
+                itemBuilder: (context, index) {
+                  return CustomCard(
+                    imagePath: "assets/images/AI.jpg",
+                    title: "Machine Learning and Data Science",
+                    university: "Stanford University",
+                    rating: "4.3",
+                  );
+                },
+              ),
+            ),
           ),
+
+
+              Padding(
+                padding: EdgeInsets.all(25),
+                child: Row(
+                  children: [
+                    Text(
+                      "Popular Categories",
+                      style: TextStyle(
+                          fontSize: TextClass.customTextSizes["large"],
+                          fontWeight: FontWeight.w700),
+                    ),
+                    Spacer(),
+                    Text(
+                      "See more",
+                      style: TextStyle(
+                          color: ColorClass.customColors['BlueGreen'],
+                          fontSize: TextClass.customTextSizes["small"],
+                          fontWeight: FontWeight.w700),
+                    )
+                  ],
+                ),
+              ),
+
+    Column(
+      children: [
+        Padding(
+  padding: const EdgeInsets.only(left: 25, right: 25),
+  child: Wrap(
+        spacing: 15, // Adjust the spacing between sets of containers
+        children: [
+          CustomContainerSet(
+            imageAsset: "assets/images/AI.jpg",
+            labelText: "Machine Learning",
+          ),
+          CustomContainerSet(
+            imageAsset: "assets/images/AI.jpg",
+            labelText: "HTML",
+          ),
+          CustomContainerSet(
+            imageAsset: "assets/images/AI.jpg",
+            labelText: "CSS",
+          ),
+         
+        ],
+  ),
+),
+const SizedBox(height: 15,),
+Padding(
+  padding: const EdgeInsets.only(left: 25, right: 25),
+  child: Wrap(
+    spacing: 15, // Adjust the spacing between sets of containers
+    children: [
+      CustomContainerSet(
+        imageAsset: "assets/images/AI.jpg",
+        labelText: "Machine Learning",
+      ),
+      CustomContainerSet(
+        imageAsset: "assets/images/AI.jpg",
+        labelText: "HTML",
+      ),
+      CustomContainerSet(
+        imageAsset: "assets/images/AI.jpg",
+        labelText: "CSS",
+      ),
+     
+    ],
+  ),
+)
+  
+      ],
+    ),
+
+Padding(
+                padding: EdgeInsets.all(25),
+                child: Row(
+                  children: [
+                    Text(
+                      "Courses from Harvard",
+                      style: TextStyle(
+                          fontSize: TextClass.customTextSizes["large"],
+                          fontWeight: FontWeight.w700),
+                    ),
+                    Spacer(),
+                    Text(
+                      "See more",
+                      style: TextStyle(
+                          color: ColorClass.customColors['BlueGreen'],
+                          fontSize: TextClass.customTextSizes["small"],
+                          fontWeight: FontWeight.w700),
+                    )
+                  ],
+                ),
+              ),
+      
+     Padding(
+            padding: const EdgeInsets.only(left: 25, right: 25),
+            child: Container(
+              height: 230,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 10,
+                itemBuilder: (context, index) {
+                  return CustomCard(
+                    imagePath: "assets/images/AI.jpg",
+                    title: "Machine Learning and Data Science",
+                    university: "Stanford University",
+                    rating: "4.3",
+                  );
+                },
+              ),
+            ),
+          ),
+            ],
+
+       ),
         ),
-        
       ),
     );
   }
 }
+
+
+
+
+
+
+
+
+
+              // Padding(
+              //     padding: const EdgeInsets.only(left: 25, right: 25),
+              //     child: Wrap(
+              //       spacing: 15, // Adjust the spacing between containers
+              //       children: [
+              //         Container(
+              //           decoration: BoxDecoration(
+              //             borderRadius: BorderRadius.circular(8),
+              //             color: Colors.white,
+              //           ),
+              //           height: 50,
+              //           padding: EdgeInsets.all(12),
+              //           child: Row(
+              //             children: [
+              //               Container(
+              //                 height: 26,
+              //                 width: 26, // Set the desired height for the image
+              //                 child: ClipRRect(
+              //                   borderRadius: BorderRadius.circular(5),
+              //                   child: Image.asset("assets/images/AI.jpg",
+              //                       fit: BoxFit.cover),
+              //                 ),
+              //               ),
+              //               const SizedBox(
+              //                 width: 10,
+              //               ),
+              //               Text("Machine Learning"),
+              //             ],
+              //           ),
+              //         ),
+                  
+                
+              //         // Add more containers as needed
+              //       ],
+              //     ))
+       
+   
+
+
+   //  return Padding(
+                      //    padding: const EdgeInsets.only(right: 10),
+                      //    child: Container(
+                      //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Colors.white,),
+
+                      //  padding: EdgeInsets.only(left: 17,right: 17),
+                      //      height: 230,
+                      //      width: 180,
+                      //      child: Column(
+
+                      //    mainAxisAlignment: MainAxisAlignment.center,
+                      //    crossAxisAlignment: CrossAxisAlignment.start,
+                      //                 children: [
+                      //                  ClipRRect(borderRadius: BorderRadius.circular(10),
+                      //                   child: Image.asset("assets/images/AI.jpg")),
+                      //                  const SizedBox(height: 10,),
+                      //                  Text("Machine Learning and Data Science",style: TextStyle(fontSize: TextClass.customTextSizes["medium"],fontWeight: FontWeight.w700),),
+                      //                  Text("Stanford University",style: TextStyle(fontSize: TextClass.customTextSizes["semi-medium"],fontWeight: FontWeight.w400),),
+                      //               Text("(64,45,466)",style: TextStyle(fontSize: TextClass.customTextSizes["small"],fontWeight: FontWeight.w400,color: ColorClass.customColors["Grey"]),),
+                      //                 ],
+                      //      ),
+                      //    ),
+                      //  );
 //       body: SafeArea(
 //         child: 
 //         CustomScrollView(
