@@ -3,25 +3,25 @@ import 'package:orinova_education_app/ColorClass.dart';
 import 'package:orinova_education_app/Screens/courseDetails.dart';
 import 'package:orinova_education_app/TextClass.dart';
 
-class ServiceModel {
+class WishlistModel {
   final String title;
-  final String description;
   final String provider;
 
   final String imageUrl;
+  final Icon icon;
 
-  ServiceModel({
+  WishlistModel({
     required this.title,
-    required this.description,
     required this.provider,
     required this.imageUrl,
+    required this.icon,
   });
 }
 
-class ServiceCard extends StatelessWidget {
-  final ServiceModel service;
+class WishlistCard extends StatelessWidget {
+  final WishlistModel wishitem;
 
-  ServiceCard(this.service);
+  WishlistCard(this.wishitem);
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class ServiceCard extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
-                      service.imageUrl,
+                      wishitem.imageUrl,
                       fit: BoxFit.cover,
                       height: double.infinity,
                       width: double.infinity,
@@ -81,35 +81,47 @@ class ServiceCard extends StatelessWidget {
               ),
             ),
             Flexible(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    maxLines: 2, // Allow up to 2 lines of text
-                    overflow: TextOverflow.ellipsis,
-                    service.title,
-                    style: TextStyle(
-                      color: ColorClass.customColors['Black'],
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 10, top: 22),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      maxLines: 2, // Allow up to 2 lines of text
+                      overflow: TextOverflow.ellipsis,
+                      wishitem.title,
+                      style: TextStyle(
+                        color: ColorClass.customColors['Black'],
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
-                  ),
-                  Text(
-                    service.description,
-                    style: TextStyle(
-                        fontSize: TextClass.customTextSizes["semi-medium"],
-                        color: ColorClass.customColors['Black'],
-                        height: 1.3),
-                  ),
-                  Text(
-                    service.provider,
-                    style: TextStyle(
-                        fontSize: TextClass.customTextSizes["small"],
-                        color: ColorClass.customColors['Black'],
-                        fontWeight: FontWeight.w700),
-                  ),
-                ],
+                    Text(
+                      wishitem.provider,
+                      style: TextStyle(
+                          fontSize: TextClass.customTextSizes["semi-medium"],
+                          color: ColorClass.customColors['Black'],
+                          height: 1.3),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        IconButton(
+                            onPressed: () {},
+                            icon: 
+                             wishitem.icon,
+                             
+                            ),
+                        Text(
+                          "\$18.09",
+                          style: TextStyle(
+                              fontSize: 17.5, fontWeight: FontWeight.w600),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ],

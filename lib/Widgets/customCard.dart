@@ -22,7 +22,7 @@ class CustomCard extends StatelessWidget {
       padding: EdgeInsets.only(right: 15.0),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(12),
           color: Colors.white,
         ),
         width: 173,
@@ -41,6 +41,8 @@ class CustomCard extends StatelessWidget {
                       child: Image.asset(
                         imagePath,
                         fit: BoxFit.cover,
+                        height: double.infinity,
+                        width: double.infinity,
                       ),
                     ),
                   ],

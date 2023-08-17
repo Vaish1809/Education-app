@@ -19,6 +19,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
      final screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Color.fromARGB(80, 225, 230, 230),
         body: SafeArea(
             child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,

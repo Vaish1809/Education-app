@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:orinova_education_app/Screens/SelectedCategoried.dart';
 import 'package:orinova_education_app/TextClass.dart';
 
 class CustomContainerSet extends StatelessWidget {
@@ -9,7 +10,17 @@ class CustomContainerSet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+   return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SelectedCategoriesScreen(),
+          ),
+        );
+      },
+      child:
+    Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(17),
         color: Colors.white,
@@ -32,6 +43,7 @@ class CustomContainerSet extends StatelessWidget {
           Text(labelText,style: TextStyle(fontSize: TextClass.customTextSizes['small'],fontWeight: FontWeight.w700),),
         ],
       ),
+    )
     );
   }
 }

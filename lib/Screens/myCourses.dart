@@ -15,7 +15,7 @@ class _MyCoursesState extends State<MyCourses> {
    List<ServiceModel> services = [
     // Populate this list with your service data
     ServiceModel(
-     
+    // title:"lkjhgfdsasdfghjlkbihbtbibibh m,tiuhrugh0qihgbnb njfd",
     title: "Machine Learning and Data Science ",
       description: "Standford University",
       provider: "75% complete",
@@ -28,6 +28,7 @@ class _MyCoursesState extends State<MyCourses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(80, 225, 230, 230),
         body: SafeArea(
             child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
@@ -43,7 +44,7 @@ class _MyCoursesState extends State<MyCourses> {
                             bottomLeft: Radius.circular(20),
                             bottomRight: Radius.circular(20),
                           )),
-                      height: 120,
+                      height: 100,
                       child: Padding(
                         padding: EdgeInsets.all(25),
                         child: Align(
@@ -56,19 +57,9 @@ class _MyCoursesState extends State<MyCourses> {
                               )),
                         ),
                       )),
-                       Padding(
-                padding: EdgeInsets.all(25),
-                child:
-                    Text(
-                      "Popular Categories",
-                      style: TextStyle(
-                          fontSize: TextClass.customTextSizes["large"],
-                          fontWeight: FontWeight.w700),
-                    ),
-                ),
-              
+                       
                   Container(
-              margin: const EdgeInsets.only(bottom: 100, left: 25, right: 25),
+              margin: const EdgeInsets.only(bottom: 100, left: 25, right: 25,top: 25),
               child: Column(
                 children: [
                   for (var service in services) ServiceCard(service),

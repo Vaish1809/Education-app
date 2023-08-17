@@ -90,7 +90,8 @@ class _MainHomePageState extends State<MainHomePage> {
                                 builder: (context) => ProfileScreen(),
                               ));
                             },
-                            icon: const Icon(Icons.notifications_none_rounded),
+                           
+                            icon: const Icon(Icons.person),
                             iconSize: 30,
                           )
                         ],
