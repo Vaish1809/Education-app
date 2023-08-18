@@ -1,6 +1,7 @@
 class TextClass {
   static final Map<String, double> customTextSizes = {
     'small': 10.42,
+    "seemore":11.5,
     'medium': 15.5,
     'semi-medium':13,
     'large': 20.03,

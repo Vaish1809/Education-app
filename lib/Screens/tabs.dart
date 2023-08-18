@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 //enum _SelectedTab { home, favorite, search, person }
-import 'package:icons_plus/icons_plus.dart';
-import 'package:orinova_education_app/ColorClass.dart';
 import 'package:orinova_education_app/Screens/Cart.dart';
 import 'package:orinova_education_app/Screens/MainHomePage.dart';
 import 'package:orinova_education_app/Screens/Search.dart';
@@ -20,10 +18,10 @@ class _TabsScreenState extends State<TabsScreen> {
 
 
   final screens = [
- MainHomePage(),
- SearchScreen(),
- MyCourses(),
- CartScreen(),
+ const MainHomePage(),
+ const SearchScreen(),
+ const MyCourses(),
+ const CartScreen(),
   ];
   
 
@@ -35,7 +33,7 @@ class _TabsScreenState extends State<TabsScreen> {
      
 bottomNavigationBar: Container(
   height: 80,
- padding: EdgeInsets.only(left: 25,right:25 ),
+ padding: const EdgeInsets.only(left: 25,right:25 ),
       color: Colors.white,
         child: SafeArea(
          
@@ -44,15 +42,15 @@ bottomNavigationBar: Container(
               rippleColor: Colors.white,
               hoverColor: Colors.white,
               gap: 1,
-              activeColor: Color.fromARGB(80,0 , 190, 190),
+              activeColor: const Color.fromARGB(80,0 , 190, 190),
               iconSize: 30,
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              duration: Duration(milliseconds: 400),
-              tabBackgroundColor: Color.fromARGB(10, 31, 171, 137),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              duration: const Duration(milliseconds: 400),
+              tabBackgroundColor: const Color.fromARGB(10, 31, 171, 137),
 
              
-               color:  Color.fromARGB(40, 31, 171, 137),
-              tabs: [
+               color:  const Color.fromARGB(40, 31, 171, 137),
+              tabs: const [
                 GButton(
                   icon:Icons.home_rounded ,
             text: 'Home',

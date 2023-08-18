@@ -10,6 +10,9 @@ class ServiceHistory extends StatefulWidget {
 class _ServiceHistoryState extends State<ServiceHistory> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(appBar: AppBar(),
+      body: Center(
+    child:  Text("Service History")
+    ),);
   }
 }

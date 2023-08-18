@@ -10,6 +10,9 @@ class SignOut extends StatefulWidget {
 class _SignOutState extends State<SignOut> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(appBar: AppBar(),
+      body: Center(
+    child:  Text("Sign Out")
+    ),);
   }
 }

@@ -18,7 +18,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 246, 246, 246),
+        backgroundColor: const Color.fromARGB(255, 246, 246, 246),
         body: SafeArea(
             child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
@@ -27,11 +27,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        padding: EdgeInsets.only(left: 25, right: 25),
+                        padding: const EdgeInsets.only(left: 25, right: 25,top: 25,bottom: 10),
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: ColorClass.customColors['BlueGreen'],
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(20),
                             bottomRight: Radius.circular(20),
                           ),
@@ -45,7 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.arrow_back_rounded,
                                   size: 30,
                                 ),
@@ -58,10 +58,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   const SizedBox(
-                                    height: 25,
+                                    height: 5,
                                   ),
                                   Text(
-                                    "Wishlist",
+                                    "Profile",
                                     style: TextStyle(
                                       fontSize:
                                           TextClass.customTextSizes['appBar'],
@@ -69,9 +69,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       color: Colors.white,
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 30,
-                                  ),
+                                Spacer(),
                                   Align(
                                     alignment: Alignment.bottomCenter,
                                     child: Container(
@@ -113,7 +111,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             Container(
                                               width: 110,
                                               height: 110,
-                                              decoration: BoxDecoration(
+                                              decoration: const BoxDecoration(
                                                 shape: BoxShape.circle,
                                               ),
                                               child: ClipOval(
@@ -134,7 +132,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               
 
                       Padding(
-                        padding: EdgeInsets.all(25),
+                        padding: const EdgeInsets.all(25),
                         child: Row(
                           children: [
                             Text(
@@ -143,13 +141,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   fontSize: TextClass.customTextSizes["large"],
                                   fontWeight: FontWeight.w700),
                             ),
-                            Spacer(),
-                            Text(
-                              "See more",
+                            const Spacer(),
+                             TextButton(
+                              onPressed: (){},
+                              child: Text(
+ "Edit",
                               style: TextStyle(
                                   color: ColorClass.customColors['BlueGreen'],
-                                  fontSize: TextClass.customTextSizes["small"],
+                                  fontSize: TextClass.customTextSizes["semi-medium"],
                                   fontWeight: FontWeight.w700),
+                              ),
+                             
                             )
                           ],
                         ),
@@ -163,7 +165,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           runSpacing: screenSize.width >= 500
                               ? 15
                               : 10, // Adjust spacing based on available width
-                          children: [
+                          children: const [
                             CustomContainerSet(
                               imageAsset: "assets/images/AI.jpg",
                               labelText: "Machine Learning",
@@ -194,7 +196,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
 
                       Padding(
-                        padding: EdgeInsets.all(25),
+                        padding: const EdgeInsets.all(25),
                         child: Row(
                           children: [
                             Text(
@@ -203,13 +205,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   fontSize: TextClass.customTextSizes["large"],
                                   fontWeight: FontWeight.w700),
                             ),
-                            Spacer(),
-                            Text(
-                              "See more",
+                            const Spacer(),
+                            TextButton(
+                              onPressed: (){},
+                              child: Text(
+ "Edit",
                               style: TextStyle(
                                   color: ColorClass.customColors['BlueGreen'],
-                                  fontSize: TextClass.customTextSizes["small"],
+                                  fontSize: TextClass.customTextSizes["semi-medium"],
                                   fontWeight: FontWeight.w700),
+                              ),
+                             
                             )
                           ],
                         ),
@@ -224,7 +230,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           runSpacing: screenSize.width >= 500
                               ? 15
                               : 10, // Adjust spacing based on available width
-                          children: [
+                          children: const [
                             TopUniCard(
                               imageAsset: "assets/images/AI.jpg",
                               uniName: "Harvard University",
@@ -246,7 +252,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                       ),
                        Container(
-              margin: EdgeInsets.all(25),
+              margin: const EdgeInsets.all(25),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -272,7 +278,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignOut(),));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const SignOut(),));
                       },
                     ),
                   )

@@ -21,7 +21,7 @@ class WishlistModel {
 class WishlistCard extends StatelessWidget {
   final WishlistModel wishitem;
 
-  WishlistCard(this.wishitem);
+  const WishlistCard(this.wishitem, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +30,12 @@ class WishlistCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => CourseDetails(),
+            builder: (context) => const CourseDetails(),
           ),
         );
       },
       child: Container(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           right: 10,
         ),
         decoration: BoxDecoration(
@@ -48,7 +48,7 @@ class WishlistCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsets.only(left: 15, right: 15),
+              margin: const EdgeInsets.only(left: 15, right: 15),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
               ),
@@ -70,7 +70,7 @@ class WishlistCard extends StatelessWidget {
                     right: 0,
                     child: IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.favorite_border_rounded,
                         size: 20,
                         color: Colors.redAccent,
@@ -113,7 +113,7 @@ class WishlistCard extends StatelessWidget {
                              wishitem.icon,
                              
                             ),
-                        Text(
+                        const Text(
                           "\$18.09",
                           style: TextStyle(
                               fontSize: 17.5, fontWeight: FontWeight.w600),

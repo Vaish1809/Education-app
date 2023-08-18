@@ -8,12 +8,12 @@ Widget buildRow(BuildContext context ,  String text) {
     children: [
       Text(
         text,
-        style: TextStyle(fontSize: 17.81, fontWeight: FontWeight.w400, color: Color(0xFF303841)),
+        style: const TextStyle(fontSize: 17.81, fontWeight: FontWeight.w400, color: Color(0xFF303841)),
       ),
-      Spacer(),
+      const Spacer(),
       IconButton(
-        onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceHistory(),));},
-        icon: Icon(
+        onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context) => const ServiceHistory(),));},
+        icon: const Icon(
           Icons.arrow_forward_ios_rounded,
           size: 19,
         ),

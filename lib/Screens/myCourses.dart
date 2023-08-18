@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:orinova_education_app/ColorClass.dart';
 import 'package:orinova_education_app/TextClass.dart';
-import 'package:orinova_education_app/Widgets/CustomAppBar.dart';
 import 'package:orinova_education_app/Widgets/ServiceCard.dart';
 
 class MyCourses extends StatefulWidget {
@@ -11,7 +10,8 @@ class MyCourses extends StatefulWidget {
   State<MyCourses> createState() => _MyCoursesState();
 }
 
-class _MyCoursesState extends State<MyCourses> {
+class _MyCoursesState extends State<MyCourses>  {
+  
    List<ServiceModel> services = [
     // Populate this list with your service data
     ServiceModel(
@@ -28,7 +28,7 @@ class _MyCoursesState extends State<MyCourses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(80, 225, 230, 230),
+      backgroundColor: const Color.fromARGB(80, 225, 230, 230),
         body: SafeArea(
             child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
@@ -40,13 +40,13 @@ class _MyCoursesState extends State<MyCourses> {
                       width: double.infinity,
                       decoration: BoxDecoration(
                           color: ColorClass.customColors['BlueGreen'],
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(20),
                             bottomRight: Radius.circular(20),
                           )),
                       height: 100,
                       child: Padding(
-                        padding: EdgeInsets.all(25),
+                        padding: const EdgeInsets.all(25),
                         child: Align(
                           alignment: Alignment.center,
                           child: Text("My Learnings",
@@ -63,17 +63,17 @@ class _MyCoursesState extends State<MyCourses> {
               child: Column(
                 children: [
                   for (var service in services) ServiceCard(service),
-                  SizedBox(height: 21),
+                  const SizedBox(height: 21),
                   for (var service in services) ServiceCard(service),
-                  SizedBox(height: 21),
+                  const SizedBox(height: 21),
                   for (var service in services) ServiceCard(service),
-                  SizedBox(height: 21),
+                  const SizedBox(height: 21),
                   
                 ],
               ),
             ),
              
-                
+              
                 ]))));
   }
 }

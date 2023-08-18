@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:orinova_education_app/ColorClass.dart';
 import 'package:orinova_education_app/Screens/courseDetails.dart';
 import 'package:orinova_education_app/TextClass.dart';
-
+import 'package:percent_indicator/percent_indicator.dart';
 class ServiceModel {
   final String title;
   final String description;
@@ -21,7 +21,7 @@ class ServiceModel {
 class ServiceCard extends StatelessWidget {
   final ServiceModel service;
 
-  ServiceCard(this.service);
+  const ServiceCard(this.service, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +30,12 @@ class ServiceCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => CourseDetails(),
+            builder: (context) => const CourseDetails(),
           ),
         );
       },
       child: Container(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           right: 10,
         ),
         decoration: BoxDecoration(
@@ -48,7 +48,7 @@ class ServiceCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsets.only(left: 15, right: 15),
+              margin: const EdgeInsets.only(left: 15, right: 15),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
               ),
@@ -70,7 +70,7 @@ class ServiceCard extends StatelessWidget {
                     right: 0,
                     child: IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.favorite_border_rounded,
                         size: 20,
                         color: Colors.redAccent,
@@ -109,6 +109,26 @@ class ServiceCard extends StatelessWidget {
                         color: ColorClass.customColors['Black'],
                         fontWeight: FontWeight.w700),
                   ),
+              
+                Padding(
+    padding: const EdgeInsets.only(top: 8), // Adjust the top padding as needed
+        child: LinearPercentIndicator(
+          barRadius: Radius.circular(10),
+          backgroundColor: ColorClass.customColors["Light"],
+          lineHeight: 8.0,
+          percent: 0.9,
+          progressColor: ColorClass.customColors["BlueGreen"],
+        ),
+                   ),
+             
+  // Expanded(
+  //   child: new LinearPercentIndicator(
+  //                   barRadius: Radius.circular(10),
+  //                     lineHeight: 8.0,
+  //                     percent: 0.9,
+  //                     progressColor: Colors.blue,
+  //                   ),
+  // )
                 ],
               ),
             ),

@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:orinova_education_app/ColorClass.dart';
-import 'package:orinova_education_app/Screens/SelectedCategoried.dart';
+import 'package:orinova_education_app/Screens/SelectedUniversity.dart';
 import 'package:orinova_education_app/TextClass.dart';
 import 'package:orinova_education_app/Widgets/customCard.dart';
 
-class SelectedUniversityScreen extends StatefulWidget {
-  const SelectedUniversityScreen({super.key});
+
+class PopularCourses extends StatefulWidget {
+  const PopularCourses({super.key});
 
   @override
-  State<SelectedUniversityScreen> createState() => _SelectedUniversityScreenState();
+  State<PopularCourses> createState() => _PopularCoursesState();
 }
 
-class _SelectedUniversityScreenState extends State<SelectedUniversityScreen> {
+class _PopularCoursesState extends State<PopularCourses> {
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +55,7 @@ class _SelectedUniversityScreenState extends State<SelectedUniversityScreen> {
                             Align(
                               alignment: Alignment.center,
                               child: Text(
-                                "Harvard University",
+                                "Popular Courses",
                                 style: TextStyle(
                                   fontSize: TextClass.customTextSizes['appBar'],
                                   fontWeight: FontWeight.w700,
@@ -75,18 +77,18 @@ Padding(
                           fontSize: TextClass.customTextSizes["large"],
                           fontWeight: FontWeight.w700),
                     ),
-                    const Spacer(),
-                    TextButton(
-                      onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedCategoriesScreen(),));},
-                      child: Text(
-  "See All",
-                      style: TextStyle(
-                          color: ColorClass.customColors['BlueGreen'],
-                          fontSize: TextClass.customTextSizes["seemore"],
-                          fontWeight: FontWeight.w700),
-                      ),
+//                  const Spacer(),
+  //                   TextButton(
+  //                     onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedUniversityScreen(),));},
+  //                     child: Text(
+  // "See All",
+  //                     style: TextStyle(
+  //                         color: ColorClass.customColors['BlueGreen'],
+  //                         fontSize: TextClass.customTextSizes["seemore"],
+  //                         fontWeight: FontWeight.w700),
+  //                     ),
                     
-                    )
+  //                   )
                   ],
                 ),
               ),
@@ -119,18 +121,18 @@ Padding(
                           fontSize: TextClass.customTextSizes["large"],
                           fontWeight: FontWeight.w700),
                     ),
-                    const Spacer(),
-                    TextButton(
-                      onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedCategoriesScreen(),));},
-                      child: Text(
-  "See All",
-                      style: TextStyle(
-                          color: ColorClass.customColors['BlueGreen'],
-                          fontSize: TextClass.customTextSizes["seemore"],
-                          fontWeight: FontWeight.w700),
-                      ),
+  //                   const Spacer(),
+  //                   TextButton(
+  //                     onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedUniversityScreen(),));},
+  //                     child: Text(
+  // "See All",
+  //                     style: TextStyle(
+  //                         color: ColorClass.customColors['BlueGreen'],
+  //                         fontSize: TextClass.customTextSizes["seemore"],
+  //                         fontWeight: FontWeight.w700),
+  //                     ),
                     
-                    )
+  //                   )
                   ],
                 ),
               ),
@@ -163,18 +165,18 @@ Padding(
                           fontSize: TextClass.customTextSizes["large"],
                           fontWeight: FontWeight.w700),
                     ),
-                    const Spacer(),
-                    TextButton(
-                      onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedCategoriesScreen(),));},
-                      child: Text(
-  "See All",
-                      style: TextStyle(
-                          color: ColorClass.customColors['BlueGreen'],
-                          fontSize: TextClass.customTextSizes["seemore"],
-                          fontWeight: FontWeight.w700),
-                      ),
+  //                   const Spacer(),
+  //                   TextButton(
+  //                     onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedUniversityScreen(),));},
+  //                     child: Text(
+  // "See All",
+  //                     style: TextStyle(
+  //                         color: ColorClass.customColors['BlueGreen'],
+  //                         fontSize: TextClass.customTextSizes["seemore"],
+  //                         fontWeight: FontWeight.w700),
+  //                     ),
                     
-                    )
+  //                   )
                   ],
                 ),
               ),
@@ -207,18 +209,18 @@ Padding(
                           fontSize: TextClass.customTextSizes["large"],
                           fontWeight: FontWeight.w700),
                     ),
-                    const Spacer(),
-                    TextButton(
-                      onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedCategoriesScreen(),));},
-                      child: Text(
-  "See All",
-                      style: TextStyle(
-                          color: ColorClass.customColors['BlueGreen'],
-                          fontSize: TextClass.customTextSizes["seemore"],
-                          fontWeight: FontWeight.w700),
-                      ),
+  //                   const Spacer(),
+  //                   TextButton(
+  //                     onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedUniversityScreen(),));},
+  //                     child: Text(
+  // "See All",
+  //                     style: TextStyle(
+  //                         color: ColorClass.customColors['BlueGreen'],
+  //                         fontSize: TextClass.customTextSizes["seemore"],
+  //                         fontWeight: FontWeight.w700),
+  //                     ),
                     
-                    )
+  //                   )
                   ],
                 ),
               ),
@@ -242,7 +244,7 @@ Padding(
           ),
      
           
-       const SizedBox(height: 50,),
+       
                       
                     ]
                     )

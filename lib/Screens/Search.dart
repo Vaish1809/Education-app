@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:orinova_education_app/ColorClass.dart';
+import 'package:orinova_education_app/Screens/AllCategoreis.dart';
 import 'package:orinova_education_app/TextClass.dart';
 import 'package:orinova_education_app/Widgets/TopUni.dart';
-import 'package:orinova_education_app/Widgets/customCard.dart';
 import 'package:orinova_education_app/Widgets/popularCategory.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
      final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromARGB(80, 225, 230, 230),
+      backgroundColor: const Color.fromARGB(80, 225, 230, 230),
         body: SafeArea(
             child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
@@ -27,13 +27,13 @@ class _SearchScreenState extends State<SearchScreen> {
                   Container(
                     decoration: BoxDecoration(
                         color: ColorClass.customColors['BlueGreen'],
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20),
                         )),
                     height: 200,
                     child: Padding(
-                      padding: EdgeInsets.all(25),
+                      padding: const EdgeInsets.all(25),
                       child: Column(
                         //   crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -46,7 +46,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white,
                               )),
-                          Spacer(),
+                          const Spacer(),
                           Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
@@ -54,7 +54,7 @@ class _SearchScreenState extends State<SearchScreen> {
                               borderRadius: BorderRadius.circular(16),
                             ),
                             child: TextField(
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 16, color: Color(0xFF303841)),
                               controller: controller,
                               decoration: InputDecoration(
@@ -62,7 +62,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                 border: InputBorder.none,
                                 labelStyle: const TextStyle(
                                     fontSize: 16, color: Color(0xFF303841)),
-                                prefixIcon: Icon(Icons.search,
+                                prefixIcon: const Icon(Icons.search,
                                     color: Color(0xFF303841)),
                                 suffixIcon: IconButton(
                                   icon: const Icon(Icons.clear),
@@ -79,7 +79,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
 
               Padding(
-                padding: EdgeInsets.all(25),
+                padding: const EdgeInsets.all(25),
                 child: Row(
                   children: [
                     Text(
@@ -88,13 +88,17 @@ class _SearchScreenState extends State<SearchScreen> {
                           fontSize: TextClass.customTextSizes["large"],
                           fontWeight: FontWeight.w700),
                     ),
-                    Spacer(),
-                    Text(
-                      "See more",
+                    const Spacer(),
+ TextButton(
+                      onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => AllCategories(),));},
+                      child: Text(
+  "See All",
                       style: TextStyle(
                           color: ColorClass.customColors['BlueGreen'],
-                          fontSize: TextClass.customTextSizes["small"],
+                          fontSize: TextClass.customTextSizes["seemore"],
                           fontWeight: FontWeight.w700),
+                      ),
+                    
                     )
                   ],
                 ),
@@ -104,7 +108,7 @@ class _SearchScreenState extends State<SearchScreen> {
   child: Wrap(
     spacing: screenSize.width >= 500 ? 15 : 10, // Adjust spacing based on available width
     runSpacing: screenSize.width >= 500 ? 15 : 10, // Adjust spacing based on available width
-    children: [
+    children: const [
       CustomContainerSet(
         imageAsset: "assets/images/AI.jpg",
         labelText: "Machine Learning",
@@ -146,7 +150,7 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
 
  Padding(
-                padding: EdgeInsets.all(25),
+                padding: const EdgeInsets.all(25),
                 child: Row(
                   children: [
                     Text(
@@ -155,13 +159,17 @@ class _SearchScreenState extends State<SearchScreen> {
                           fontSize: TextClass.customTextSizes["large"],
                           fontWeight: FontWeight.w700),
                     ),
-                    Spacer(),
-                    Text(
-                      "See more",
+                    const Spacer(),
+                    TextButton(
+                      onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => AllCategories(),));},
+                      child: Text(
+  "See All",
                       style: TextStyle(
                           color: ColorClass.customColors['BlueGreen'],
-                          fontSize: TextClass.customTextSizes["small"],
+                          fontSize: TextClass.customTextSizes["seemore"],
                           fontWeight: FontWeight.w700),
+                      ),
+                    
                     )
                   ],
                 ),
@@ -172,7 +180,7 @@ class _SearchScreenState extends State<SearchScreen> {
   child: Wrap(
     spacing: screenSize.width >= 500 ? 15 : 10, // Adjust spacing based on available width
     runSpacing: screenSize.width >= 500 ? 15 : 10, // Adjust spacing based on available width
-    children: [
+    children: const [
       TopUniCard(
         imageAsset: "assets/images/AI.jpg",
         uniName: "Harvard University",
@@ -210,7 +218,7 @@ class _SearchScreenState extends State<SearchScreen> {
   ),
 ),
 
-                ]
+              const SizedBox(height: 100,),  ]
             )
         )
         )

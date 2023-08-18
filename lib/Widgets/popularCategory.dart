@@ -6,7 +6,7 @@ class CustomContainerSet extends StatelessWidget {
   final String imageAsset;
   final String labelText;
 
-  CustomContainerSet({required this.imageAsset, required this.labelText});
+  const CustomContainerSet({super.key, required this.imageAsset, required this.labelText});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class CustomContainerSet extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => SelectedCategoriesScreen(),
+            builder: (context) => const SelectedCategoriesScreen(),
           ),
         );
       },
@@ -25,11 +25,11 @@ class CustomContainerSet extends StatelessWidget {
         borderRadius: BorderRadius.circular(17),
         color: Colors.white,
       ),
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Container(
+          SizedBox(
             height: 26,
             width: 26,
             child: ClipRRect(

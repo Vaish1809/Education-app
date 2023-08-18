@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:orinova_education_app/ColorClass.dart';
 import 'package:orinova_education_app/TextClass.dart';
-import 'package:orinova_education_app/Widgets/CustomAppBar.dart';
-import 'package:orinova_education_app/Widgets/ServiceCard.dart';
 import 'package:orinova_education_app/Widgets/WishlistCard.dart';
 
 class WishlistScreen extends StatefulWidget {
@@ -19,13 +17,13 @@ class _WishlistScreenState extends State<WishlistScreen> {
       title: "Machine Learning and Data Science ",
       provider: "Standford University",
       imageUrl: "assets/images/AI.jpg",
-      icon:Icon(Icons.shopping_cart),
+      icon:const Icon(Icons.shopping_cart),
     ),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 246, 246, 246),
+        backgroundColor: const Color.fromARGB(255, 246, 246, 246),
         body: SafeArea(
             child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
@@ -37,7 +35,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: ColorClass.customColors['BlueGreen'],
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(20),
                             bottomRight: Radius.circular(20),
                           ),
@@ -53,7 +51,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                                   onPressed: () {
                                     Navigator.pop(context);
                                   },
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.arrow_back_rounded,
                                     size: 30,
                                   ),
@@ -82,16 +80,30 @@ class _WishlistScreenState extends State<WishlistScreen> {
                           children: [
                             for (var wishitem in wishitems)
                               WishlistCard(wishitem),
-                            SizedBox(height: 21),
+                            const SizedBox(height: 21),
                             for (var wishitem in wishitems)
                               WishlistCard(wishitem),
-                            SizedBox(height: 21),
+                            const SizedBox(height: 21),
                             for (var wishitem in wishitems)
                               WishlistCard(wishitem),
-                            SizedBox(height: 21),
+                            const SizedBox(height: 21),
+                            for (var wishitem in wishitems)
+                              WishlistCard(wishitem),
+                            const SizedBox(height: 21),
+                            for (var wishitem in wishitems)
+                              WishlistCard(wishitem),
+                            const SizedBox(height: 21),
+                            for (var wishitem in wishitems)
+                              WishlistCard(wishitem),
+                            const SizedBox(height: 21),
+                            for (var wishitem in wishitems)
+                              WishlistCard(wishitem),
+                            const SizedBox(height: 21),
+
                           ],
                         ),
                       ),
+                      const SizedBox(height: 50,),
                     ]))));
   }
 }

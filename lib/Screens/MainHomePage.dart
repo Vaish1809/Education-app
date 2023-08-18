@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:orinova_education_app/ColorClass.dart';
+import 'package:orinova_education_app/Screens/AllCategoreis.dart';
 import 'package:orinova_education_app/Screens/Profile.dart';
+import 'package:orinova_education_app/Screens/SelectedUniversity.dart';
 import 'package:orinova_education_app/Screens/Wishlist.dart';
+import 'package:orinova_education_app/Screens/popularCourses.dart';
 import 'package:orinova_education_app/TextClass.dart';
 import 'package:orinova_education_app/Widgets/customCard.dart';
 import 'package:orinova_education_app/Widgets/popularCategory.dart';
@@ -19,7 +22,7 @@ class _MainHomePageState extends State<MainHomePage> {
     Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(80, 225, 230, 230),
+      backgroundColor: const Color.fromARGB(80, 225, 230, 230),
       body: SafeArea(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -28,13 +31,13 @@ class _MainHomePageState extends State<MainHomePage> {
               Container(
                 decoration: BoxDecoration(
                     color: ColorClass.customColors['BlueGreen'],
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(20),
                       bottomRight: Radius.circular(20),
                     )),
                 height: 274,
                 child: Padding(
-                  padding: EdgeInsets.all(25),
+                  padding: const EdgeInsets.all(25),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -70,8 +73,14 @@ class _MainHomePageState extends State<MainHomePage> {
                             ],
                           ),
                           const Spacer(),
+                          Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: Colors.white,
+      ),
+      child:
                           IconButton(
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.favorite_border_rounded,
                               size: 30,
                             ),
@@ -79,28 +88,35 @@ class _MainHomePageState extends State<MainHomePage> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => WishlistScreen(),
+                                    builder: (context) => const WishlistScreen(),
                                   ));
                             },
                             color: Colors.redAccent,
-                          ),
+                          ),),
+                 const SizedBox(width: 10,),         
+ Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color:Colors.white,
+      ),
+      child:
                           IconButton(
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => ProfileScreen(),
+                                builder: (context) => const ProfileScreen(),
                               ));
                             },
                            
                             icon: const Icon(Icons.person),
                             iconSize: 30,
-                          )
+                          )),
                         ],
                       ),
                       const SizedBox(
                         height: 45,
                       ),
                       if (screenSize.width >= 500)
-                        Text(
+                        const Text(
                           "What would you like to learn?",
                           style: TextStyle(
                               fontSize: 33,
@@ -123,7 +139,7 @@ class _MainHomePageState extends State<MainHomePage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(25),
+                padding: const EdgeInsets.all(25),
                 child: Row(
                   children: [
                     Text(
@@ -132,13 +148,17 @@ class _MainHomePageState extends State<MainHomePage> {
                           fontSize: TextClass.customTextSizes["large"],
                           fontWeight: FontWeight.w700),
                     ),
-                    Spacer(),
-                    Text(
-                      "See more",
+                    const Spacer(),
+                    TextButton(
+                      onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => PopularCourses(),));},
+                      child: Text(
+  "See All",
                       style: TextStyle(
                           color: ColorClass.customColors['BlueGreen'],
-                          fontSize: TextClass.customTextSizes["small"],
+                          fontSize: TextClass.customTextSizes["seemore"],
                           fontWeight: FontWeight.w700),
+                      ),
+                    
                     )
                   ],
                 ),
@@ -148,13 +168,13 @@ class _MainHomePageState extends State<MainHomePage> {
 
       Padding(
             padding: const EdgeInsets.only(left: 25, right: 25),
-            child: Container(
+            child: SizedBox(
               height: 230,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 10,
                 itemBuilder: (context, index) {
-                  return CustomCard(
+                  return const CustomCard(
                     imagePath: "assets/images/AI.jpg",
                     title: "Machine Learning and Data Science",
                     university: "Stanford University",
@@ -167,7 +187,7 @@ class _MainHomePageState extends State<MainHomePage> {
 
 
               Padding(
-                padding: EdgeInsets.all(25),
+                padding: const EdgeInsets.all(25),
                 child: Row(
                   children: [
                     Text(
@@ -176,56 +196,28 @@ class _MainHomePageState extends State<MainHomePage> {
                           fontSize: TextClass.customTextSizes["large"],
                           fontWeight: FontWeight.w700),
                     ),
-                    Spacer(),
-                    Text(
-                      "See more",
+                    const Spacer(),
+                    TextButton(
+                      onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => AllCategories(),));},
+                      child: Text(
+  "See All",
                       style: TextStyle(
                           color: ColorClass.customColors['BlueGreen'],
-                          fontSize: TextClass.customTextSizes["small"],
+                          fontSize: TextClass.customTextSizes["seemore"],
                           fontWeight: FontWeight.w700),
+                      ),
+                    
                     )
                   ],
                 ),
               ),
-// Container(
 
-//   padding: const EdgeInsets.only(left: 25, right: 25),
-//   child: Wrap(
-//         spacing: 15, // Adjust the spacing between sets of containers
-//         children: [
-//           CustomContainerSet(
-//             imageAsset: "assets/images/AI.jpg",
-//             labelText: "Machine Learning",
-//           ),
-//           CustomContainerSet(
-//             imageAsset: "assets/images/AI.jpg",
-//             labelText: "HTML",
-//           ),
-//           CustomContainerSet(
-//             imageAsset: "assets/images/AI.jpg",
-//             labelText: "CSS",
-//           ),
-//            CustomContainerSet(
-//         imageAsset: "assets/images/AI.jpg",
-//         labelText: "Machine Learning",
-//       ),
-//       CustomContainerSet(
-//         imageAsset: "assets/images/AI.jpg",
-//         labelText: "HTML",
-//       ),
-//       CustomContainerSet(
-//         imageAsset: "assets/images/AI.jpg",
-//         labelText: "CSS",
-//       ),
-//         ],
-//   ),
-// ),
 Container(
   padding: const EdgeInsets.only(left: 25, right: 25),
   child: Wrap(
     spacing: screenSize.width >= 500 ? 15 : 10, // Adjust spacing based on available width
     runSpacing: screenSize.width >= 500 ? 15 : 10, // Adjust spacing based on available width
-    children: [
+    children: const [
       CustomContainerSet(
         imageAsset: "assets/images/AI.jpg",
         labelText: "Machine Learning",
@@ -253,80 +245,10 @@ Container(
     ],
   ),
 ),
-// const SizedBox(height: 15,),
-// Padding(
-//   padding: const EdgeInsets.only(left: 25, right: 25),
-//   child: Wrap(
-//     spacing: 15, // Adjust the spacing between sets of containers
-//     children: [
-//       CustomContainerSet(
-//         imageAsset: "assets/images/AI.jpg",
-//         labelText: "Machine Learning",
-//       ),
-//       CustomContainerSet(
-//         imageAsset: "assets/images/AI.jpg",
-//         labelText: "HTML",
-//       ),
-//       CustomContainerSet(
-//         imageAsset: "assets/images/AI.jpg",
-//         labelText: "CSS",
-//       ),
-     
-//     ],
-//   ) ,
-// )
-// ,
-//     Column(
-//       children: [
-//         Padding(
-//   padding: const EdgeInsets.only(left: 25, right: 25),
-//   child: Wrap(
-//         spacing: 15, // Adjust the spacing between sets of containers
-//         children: [
-//           CustomContainerSet(
-//             imageAsset: "assets/images/AI.jpg",
-//             labelText: "Machine Learning",
-//           ),
-//           CustomContainerSet(
-//             imageAsset: "assets/images/AI.jpg",
-//             labelText: "HTML",
-//           ),
-//           CustomContainerSet(
-//             imageAsset: "assets/images/AI.jpg",
-//             labelText: "CSS",
-//           ),
-         
-//         ],
-//   ),
-// ),
-// const SizedBox(height: 15,),
-// Padding(
-//   padding: const EdgeInsets.only(left: 25, right: 25),
-//   child: Wrap(
-//     spacing: 15, // Adjust the spacing between sets of containers
-//     children: [
-//       CustomContainerSet(
-//         imageAsset: "assets/images/AI.jpg",
-//         labelText: "Machine Learning",
-//       ),
-//       CustomContainerSet(
-//         imageAsset: "assets/images/AI.jpg",
-//         labelText: "HTML",
-//       ),
-//       CustomContainerSet(
-//         imageAsset: "assets/images/AI.jpg",
-//         labelText: "CSS",
-//       ),
-     
-//     ],
-//   ),
-// )
-  
-//       ],
-//     ),
+
 
 Padding(
-                padding: EdgeInsets.all(25),
+                padding: const EdgeInsets.all(25),
                 child: Row(
                   children: [
                     Text(
@@ -335,26 +257,30 @@ Padding(
                           fontSize: TextClass.customTextSizes["large"],
                           fontWeight: FontWeight.w700),
                     ),
-                    Spacer(),
-                    Text(
-                      "See more",
+                    const Spacer(),
+                    TextButton(
+                      onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SelectedUniversityScreen(),));},
+                      child: Text(
+  "See All",
                       style: TextStyle(
                           color: ColorClass.customColors['BlueGreen'],
-                          fontSize: TextClass.customTextSizes["small"],
+                          fontSize: TextClass.customTextSizes["seemore"],
                           fontWeight: FontWeight.w700),
+                      ),
+                    
                     )
                   ],
                 ),
               ),
        Padding(
             padding: const EdgeInsets.only(left: 25, right: 25),
-            child: Container(
+            child: SizedBox(
               height: 230,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 10,
                 itemBuilder: (context, index) {
-                  return CustomCard(
+                  return const CustomCard(
                     imagePath: "assets/images/AI.jpg",
                     title: "Machine Learning and Data Science",
                     university: "Stanford University",
@@ -364,7 +290,7 @@ Padding(
               ),
             ),
           ),
-      // Add more containers as needed
+     const SizedBox(height: 50,),
             ],
 
        ),
@@ -557,3 +483,107 @@ Padding(
 //     );
 //   }
 // }
+// const SizedBox(height: 15,),
+// Padding(
+//   padding: const EdgeInsets.only(left: 25, right: 25),
+//   child: Wrap(
+//     spacing: 15, // Adjust the spacing between sets of containers
+//     children: [
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "Machine Learning",
+//       ),
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "HTML",
+//       ),
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "CSS",
+//       ),
+     
+//     ],
+//   ) ,
+// )
+// ,
+//     Column(
+//       children: [
+//         Padding(
+//   padding: const EdgeInsets.only(left: 25, right: 25),
+//   child: Wrap(
+//         spacing: 15, // Adjust the spacing between sets of containers
+//         children: [
+//           CustomContainerSet(
+//             imageAsset: "assets/images/AI.jpg",
+//             labelText: "Machine Learning",
+//           ),
+//           CustomContainerSet(
+//             imageAsset: "assets/images/AI.jpg",
+//             labelText: "HTML",
+//           ),
+//           CustomContainerSet(
+//             imageAsset: "assets/images/AI.jpg",
+//             labelText: "CSS",
+//           ),
+         
+//         ],
+//   ),
+// ),
+// const SizedBox(height: 15,),
+// Padding(
+//   padding: const EdgeInsets.only(left: 25, right: 25),
+//   child: Wrap(
+//     spacing: 15, // Adjust the spacing between sets of containers
+//     children: [
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "Machine Learning",
+//       ),
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "HTML",
+//       ),
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "CSS",
+//       ),
+     
+//     ],
+//   ),
+// )
+  
+//       ],
+//     ),
+// Container(
+
+//   padding: const EdgeInsets.only(left: 25, right: 25),
+//   child: Wrap(
+//         spacing: 15, // Adjust the spacing between sets of containers
+//         children: [
+//           CustomContainerSet(
+//             imageAsset: "assets/images/AI.jpg",
+//             labelText: "Machine Learning",
+//           ),
+//           CustomContainerSet(
+//             imageAsset: "assets/images/AI.jpg",
+//             labelText: "HTML",
+//           ),
+//           CustomContainerSet(
+//             imageAsset: "assets/images/AI.jpg",
+//             labelText: "CSS",
+//           ),
+//            CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "Machine Learning",
+//       ),
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "HTML",
+//       ),
+//       CustomContainerSet(
+//         imageAsset: "assets/images/AI.jpg",
+//         labelText: "CSS",
+//       ),
+//         ],
+//   ),
+// ),
