@@ -28,7 +28,9 @@ class _ProceedtoPayState extends State<ProceedtoPay> {
 //     super.dispose();
 //   }
   Widget build(BuildContext context) {
-    return Scaffold(
+    return 
+    Scaffold(
+      appBar: AppBar(),
      body: Center(child: Text("Proceed to PayS"),)
       // SingleChildScrollView(
       //  child: Padding(

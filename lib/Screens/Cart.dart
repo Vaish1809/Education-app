@@ -112,7 +112,7 @@ class _CartScreenState extends State<CartScreen> {
 
                       Container(
                         margin: const EdgeInsets.only(
-                            bottom: 100, left: 25, right: 25, top: 25),
+                            bottom: 200, left: 25, right: 25, top: 25),
                         child: Column(
                           children: [
                             for (var wishitem in wishitems)
